@@ -18,7 +18,6 @@ import { getStore } from '../../redux/slices/store';
 import LoadingScreen from '../../components/loading-screen';
 import { useAuthContext } from '../../auth/useAuthContext';
 import ConfirmUserEmail from './ConfirmUserEmail';
-import { use } from 'i18next';
 
 // ----------------------------------------------------------------------
 

@@ -9,5 +9,3 @@ module.exports = {
   },
   // basePath: '/',
 };
-
-console.log(process.env.MIXPANEL_TOKEN);
