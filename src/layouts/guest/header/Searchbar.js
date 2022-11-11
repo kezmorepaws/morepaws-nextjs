@@ -15,7 +15,7 @@ import Iconify from '../../../components/iconify';
 import { IconButtonAnimate } from '../../../components/animate';
 import SearchNotFound from '../../../components/search-not-found';
 //
-import navConfig from '../nav/config';
+import navConfig from './nav/config';
 
 // ----------------------------------------------------------------------
 
