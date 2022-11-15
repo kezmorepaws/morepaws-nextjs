@@ -12,15 +12,15 @@ export const LandingContentContainer = styled(Box)(({ theme }) => ({
 export const HeroLogoContainer = styled(Box)(({ theme }) => ({
   width: '800px',
   [theme.breakpoints.down('md')]: {
-    width: '90vw',
+    width: '80vw',
   },
 }));
 
 export const HeroImageContainer = styled(Box)(({ theme }) => ({
-  width: '1200px',
-  [theme.breakpoints.down('md')]: {
-    width: '100vw',
-  },
+  width: '95vw',
+  //   [theme.breakpoints.down('md')]: {
+  //     width: 'vw',
+  //   },
 }));
 
 export const LandingSignUpFormContainer = styled(Box)(({ theme }) => ({
