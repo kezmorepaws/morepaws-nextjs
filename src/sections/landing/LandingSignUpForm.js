@@ -10,9 +10,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { mixpanelTrack, MIXPANEL_EVENTS } from '../../mixpanel/mixpanel';
 
 const LandingSignUpForm = (props) => {
-  const LoginSchema = Yup.object().shape({
+  const SignUpSchema = Yup.object().shape({
     email: Yup.string().email('Email must be a valid email address').required('Email is required'),
-    full_name: Yup.string().required('Password is required'),
+    full_name: Yup.string().required('Your name is required'),
   });
   const defaultValues = {
     email: '',
@@ -20,7 +20,7 @@ const LandingSignUpForm = (props) => {
   };
 
   const methods = useForm({
-    resolver: yupResolver(LoginSchema),
+    resolver: yupResolver(SignUpSchema),
     defaultValues,
   });
 
@@ -52,7 +52,8 @@ const LandingSignUpForm = (props) => {
       <LandingSignUpFormContainer>
         <Box mb={2}>
           <Typography color={'white'} variant="body">
-            Sign up below for your chance to win £100 worth of dog treats!
+            Sign up below for your chance to{' '}
+            <strong style={{ letterSpacing: -0.3, textDecoration: 'underline' }}>win £100 worth of dog treats!</strong>
           </Typography>
         </Box>
         <Stack mb={4} gap={2}>
@@ -60,7 +61,7 @@ const LandingSignUpForm = (props) => {
           <RHFTextField onDarkBg={true} variant={'filled'} name="email" label="Email address" />
         </Stack>
         <Box display={'flex'} justifyContent={'flex-end'}>
-          <Button color="_white" variant="outlined">
+          <Button type="submit" color="_white" variant="outlined">
             Enter the draw
           </Button>
         </Box>
