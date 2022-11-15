@@ -10,8 +10,28 @@ RHFTextField.propTypes = {
   name: PropTypes.string,
 };
 
-export default function RHFTextField({ name, ...other }) {
+export default function RHFTextField({ name, variant, onDarkBg, addOutline, classes, ...other }) {
   const { control } = useFormContext();
+
+  const sx = onDarkBg
+    ? {
+        '& label': {
+          color: 'white',
+        },
+        '& label.Mui-focused': {
+          color: 'primary.lighter',
+        },
+        '& .MuiFilledInput-root': {
+          color: 'white',
+          ...(addOutline && { border: '0.2px solid white' }),
+        },
+        '& .MuiFilledInput-input': {
+          '&::placeholder': {
+            color: 'white',
+          },
+        },
+      }
+    : {};
 
   return (
     <Controller
@@ -19,7 +39,10 @@ export default function RHFTextField({ name, ...other }) {
       control={control}
       render={({ field, fieldState: { error } }) => (
         <TextField
+          variant={variant || 'standard'}
+          color="warning"
           {...field}
+          sx={sx}
           fullWidth
           value={typeof field.value === 'number' && field.value === 0 ? '' : field.value}
           error={!!error}
