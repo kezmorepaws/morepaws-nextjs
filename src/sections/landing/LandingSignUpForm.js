@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { LandingSignUpFormContainer } from './Landing.styles';
 import { Box, Button, Stack, Typography } from '@mui/material';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 import * as Yup from 'yup';
 import FormProvider, { RHFTextField } from '../../components/hook-form';
@@ -52,7 +53,7 @@ const LandingSignUpForm = (props) => {
       <LandingSignUpFormContainer>
         <Box mb={2}>
           <Typography color={'white'} variant="body">
-            Sign up below for your chance to{' '}
+            <StarBorderIcon sx={{ marginBottom: -0.8 }} color="warning" /> Sign up below for your chance to{' '}
             <strong style={{ letterSpacing: -0.3, textDecoration: 'underline' }}>win £100 worth of dog treats!</strong>
           </Typography>
         </Box>
