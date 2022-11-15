@@ -40,15 +40,6 @@ export default function Page404() {
           </Typography>
         </m.div>
 
-        {/* <m.div variants={varBounce().in}>
-          <PageNotFoundIllustration
-            sx={{
-              height: 260,
-              my: { xs: 5, sm: 10 },
-            }}
-          />
-        </m.div> */}
-
         <m.div
           style={{ marginBottom: 24, display: 'flex', justifyContent: 'center', gap: 16 }}
           variants={varBounce().in}

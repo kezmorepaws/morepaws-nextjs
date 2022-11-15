@@ -71,7 +71,7 @@ const typography = {
   },
   subtitle1: {
     fontWeight: 600,
-    lineHeight: 1.5,
+    lineHeight: 1.6,
     fontSize: pxToRem(16),
   },
   subtitle2: {
@@ -81,7 +81,7 @@ const typography = {
     marginBottom: -1,
   },
   body1: {
-    lineHeight: 1.5,
+    lineHeight: 1.6,
     fontSize: pxToRem(16),
     marginBottom: -1,
   },
@@ -91,12 +91,12 @@ const typography = {
     marginBottom: -1,
   },
   caption: {
-    lineHeight: 1.5,
+    lineHeight: 1.6,
     fontSize: pxToRem(12),
   },
   overline: {
     fontWeight: 700,
-    lineHeight: 1.5,
+    lineHeight: 1.6,
     fontSize: pxToRem(12),
     textTransform: 'uppercase',
   },

@@ -16,7 +16,7 @@ export default function Input(theme) {
         input: {
           '&::placeholder': {
             opacity: 1,
-            color: theme.palette.text.disabled,
+            // color: theme.palette.primary.light,
           },
         },
       },
@@ -37,7 +37,7 @@ export default function Input(theme) {
       styleOverrides: {
         root: {
           '& .MuiInputLabel-root.Mui-focused': {
-            color: theme.palette.text.primary,
+            // color: theme.palette.text.primary,
           },
         },
       },

@@ -6,10 +6,13 @@ import NextLink from 'next/link';
 import { useTheme } from '@mui/material/styles';
 import { Box, Link, Typography } from '@mui/material';
 import Subheader from '../subheader/Subheader';
+import Image from 'next/image';
+import MPLogo from '../../assets/logo/MorePaws-logo-2.png';
+import { LogoImageWrapper } from './Logo.styles';
 
 // ----------------------------------------------------------------------
 
-const Logo = forwardRef(({ withVendors, disabledLink = false, sx }, ref) => {
+const Logo = forwardRef(({ disabledLink = false, sx }, ref) => {
   const theme = useTheme();
 
   const PRIMARY_LIGHT = theme.palette.primary.light;
@@ -34,24 +37,16 @@ const Logo = forwardRef(({ withVendors, disabledLink = false, sx }, ref) => {
       component="div"
       sx={{
         display: 'flex',
-        alignItems: withVendors ? 'center' : '',
-        justifyContent: withVendors ? 'center' : '',
         flexDirection: 'column',
+        width: 'max-content',
+        padding: 2,
+        borderRadius: 1.2,
+        backgroundColor: theme.palette.common.lightBrown,
       }}
     >
-      <Typography
-        variant="h3"
-        sx={{
-          textTransform: 'lowercase',
-          letterSpacing: '-1px',
-        }}
-      >
-        My Local Deli
-      </Typography>
-
-      {withVendors && (
-        <Subheader sx={{ color: theme.palette.grey[500], letterSpacing: 2.5 }} text={'Vendor Dashboard'} />
-      )}
+      <LogoImageWrapper>
+        <Image src={MPLogo} alt={'logo'} />
+      </LogoImageWrapper>
     </Box>
   );
 
