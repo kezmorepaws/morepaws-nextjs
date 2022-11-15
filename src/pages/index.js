@@ -8,6 +8,8 @@ import Image from 'next/image';
 import MPLogo from '../assets/logo/MorePaws-logo-2.png';
 import HeroImage from '../assets/images/landing-hero-image.jpeg';
 import LandingSignUpForm from '../sections/landing/LandingSignUpForm';
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 // --------------- PRELAUNCH LANDING PAGE INDEX
 
@@ -21,7 +23,7 @@ const index = (props) => (
         <Box maxWidth={'500px'} textAlign={'center'} mb={4}>
           <Box mt={2} mb={6}>
             <Typography gutterBottom color={'primary'} variant="h4">
-              Who are we?
+              <EmojiPeopleIcon sx={{ marginBottom: -0.4 }} color="warning" /> Who are we?
             </Typography>
             <Typography color={'primary'} variant="subtitle">
               We are a new platform for dog lovers to find like minded people and pets, explore new areas and expand you
@@ -35,7 +37,7 @@ const index = (props) => (
           </Box>
           <Box mb={2}>
             <Typography gutterBottom color={'primary'} variant="h4">
-              Prelaunch competition
+              <EmojiEventsIcon sx={{ marginBottom: -0.4 }} color="warning" /> Prelaunch competition
             </Typography>
             <Typography color={'primary'} variant="subtitle">
               Grab your <strong>chance to win £100</strong> by signing up to our pre-launch newsletter below. The winner
