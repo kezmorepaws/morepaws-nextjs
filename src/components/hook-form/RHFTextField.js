@@ -19,7 +19,7 @@ export default function RHFTextField({ name, variant, onDarkBg, addOutline, clas
           color: 'white',
         },
         '& label.Mui-focused': {
-          color: 'primary.lighter',
+          color: 'warning',
         },
         '& .MuiFilledInput-root': {
           color: 'white',
