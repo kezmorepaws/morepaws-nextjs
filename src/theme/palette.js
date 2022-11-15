@@ -26,10 +26,10 @@ const GREY = {
 //   contrastText: '#fff',
 // };
 const PRIMARY = {
-  lighter: '#d54b4b',
-  light: '#b42a2a',
-  main: '#960909',
-  dark: '#880a0a',
+  lighter: '#d09273',
+  light: '#804b30',
+  main: '#60341e',
+  dark: '#402416',
   darker: '#6d1f1f',
   contrastText: '#fff',
 };
@@ -97,7 +97,7 @@ const ERROR_RED = {
 };
 
 const COMMON = {
-  common: { black: '#000', white: '#fff' },
+  common: { black: '#000', white: '#fff', lightBrown: '#FEF6F2' },
   primary: PRIMARY,
   secondary: SECONDARY,
   info: INFO,
