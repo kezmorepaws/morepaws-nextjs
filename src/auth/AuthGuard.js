@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 // components
 import LoadingScreen from '../components/loading-screen';
 //
-import Login from '../pages/login';
+// import Login from '../pages/login';
 import { useAuthContext } from './useAuthContext';
 
 // ----------------------------------------------------------------------
@@ -34,13 +34,13 @@ export default function AuthGuard({ children }) {
     return <LoadingScreen />;
   }
 
-  if (!isAuthenticated) {
-    if (pathname !== requestedLocation) {
-      setRequestedLocation(pathname);
-      // push('/login');
-    }
-    return <Login />;
-  }
+  // if (!isAuthenticated) {
+  //   if (pathname !== requestedLocation) {
+  //     setRequestedLocation(pathname);
+  //     // push('/login');
+  //   }
+  //   return <Login />;
+  // }
 
   return <>{children}</>;
 }
