@@ -32,7 +32,7 @@ const index = (props) => (
             </Typography>
             <Typography color={'primary'} variant="subtitle">
               We are a new platform for dog lovers to find like minded people, like minded pets, explore new areas and
-              expand you your dogs social circle by creating friendly, local communities.
+              expand your dogs social circle by creating friendly, local communities.
             </Typography>
             <br />
             <br />
