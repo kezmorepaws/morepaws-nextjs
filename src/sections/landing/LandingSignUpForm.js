@@ -51,10 +51,10 @@ const LandingSignUpForm = (props) => {
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <LandingSignUpFormContainer>
-        <Box mb={2}>
+        <Box mb={3}>
           <Typography color={'white'} variant="body">
             <StarBorderIcon sx={{ marginBottom: -0.8 }} color="warning" /> Sign up below for your chance to{' '}
-            <strong style={{ letterSpacing: -0.3, textDecoration: 'underline' }}>win £100 worth of dog treats!</strong>
+            <strong>win £100 worth of dog treats!</strong>
           </Typography>
         </Box>
         <Stack mb={4} gap={2}>
