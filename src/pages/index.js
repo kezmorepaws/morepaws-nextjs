@@ -11,7 +11,7 @@ import {
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import MPLogo from '../assets/logo/MorePaws-logo-2.png';
-import HeroImage from '../assets/images/landing-hero-image.jpeg';
+import HeroImage from '../assets/images/landing-hero-image.png';
 import LandingSignUpForm from '../sections/landing/LandingSignUpForm';
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
@@ -19,7 +19,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 // --------------- PRELAUNCH LANDING PAGE INDEX
 
 const index = (props) => (
-  <Stack>
+  <Stack overflow={'hidden'}>
     <LandingContentContainer>
       <Stack alignItems={'center'} justifyContent={'center'}>
         <HeroLogoContainer>
@@ -56,7 +56,9 @@ const index = (props) => (
         <Box mb={8}>
           <LandingSignUpForm />
         </Box>
-        <HeroImageContainer>{/* <Image src={HeroImage} alt={'logo'} /> */}</HeroImageContainer>
+        <HeroImageContainer>
+          <Image src={HeroImage} alt={'logo'} />
+        </HeroImageContainer>
       </Stack>
     </LandingContentContainer>
   </Stack>
