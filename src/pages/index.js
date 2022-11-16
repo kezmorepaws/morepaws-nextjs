@@ -29,22 +29,23 @@ const index = (props) => (
           <Box mt={2} mb={6}>
             <Box mb={6}>
               <Typography gutterBottom color={'primary'} variant="h4">
-                <EmojiPeopleIcon sx={{ marginBottom: -0.4 }} color="warning" /> Who are we?
+                <EmojiPeopleIcon fontSize="large" sx={{ marginBottom: -0.75 }} color="warning" /> Who are we?
               </Typography>
               <Typography color={'primary'} variant="subtitle">
                 MorePaws is an online platform dedicated to helping dog lovers find like minded people, with like minded
-                pets, explore new areas and expand your dogs social circle by creating friendly, local communities.
+                pets, explore new dog-friendly places and expand your dogs social circle by creating friendly, local
+                communities.
               </Typography>
             </Box>
             <ComingSoonBox>
-              <Typography color={'primary'} variant="subtitle">
+              <Typography color={'primary'} variant="h6">
                 Website coming soon!
               </Typography>
             </ComingSoonBox>
           </Box>
           <Box mb={4}>
             <Typography gutterBottom color={'primary'} variant="h4">
-              <EmojiEventsIcon sx={{ marginBottom: -0.4 }} color="warning" /> Pre-launch competition
+              <EmojiEventsIcon fontSize="large" sx={{ marginBottom: -0.75 }} color="warning" /> Pre-launch competition
             </Typography>
             <Typography color={'primary'} variant="subtitle">
               Grab your <strong>chance to win £100 worth of dog treats,</strong> by signing up to our pre-launch
@@ -55,9 +56,7 @@ const index = (props) => (
         <Box mb={8}>
           <LandingSignUpForm />
         </Box>
-        <HeroImageContainer>
-          <Image src={HeroImage} alt={'logo'} />
-        </HeroImageContainer>
+        <HeroImageContainer>{/* <Image src={HeroImage} alt={'logo'} /> */}</HeroImageContainer>
       </Stack>
     </LandingContentContainer>
   </Stack>

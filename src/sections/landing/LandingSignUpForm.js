@@ -57,7 +57,7 @@ const LandingSignUpForm = () => {
       <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
         <LandingSignUpFormIconAndMessageContainer>
           <Box mr={1}>
-            <StarBorderIcon sx={{ marginBottom: -0.8 }} color="warning" />
+            <StarBorderIcon fontSize="large" sx={{ marginBottom: -0.8 }} color="warning" />
           </Box>
           <Typography color={'white'} variant="body">
             Sign up below for your chance to <strong>win £100 worth of dog treats!</strong>
@@ -75,7 +75,7 @@ const LandingSignUpForm = () => {
         </Stack>
         <Box display={'flex'} alignItems={'center'} justifyContent={'flex-end'}>
           {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="warning" />}
-          <Button disabled={isLoading} sx={{ fontWeight: 500 }} type="submit" color="_white" variant="outlined">
+          <Button disabled={isLoading} sx={{ fontWeight: 400 }} type="submit" color="_white" variant="outlined">
             {!isLoading ? 'Enter the draw' : 'Sending...'}
           </Button>
         </Box>

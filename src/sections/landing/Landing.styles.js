@@ -21,7 +21,7 @@ export const HeroLogoContainer = styled(Box)(({ theme }) => ({
 
 export const ComingSoonBox = styled(Box)(({ theme }) => ({
   padding: `${theme.spacing(2)}  ${theme.spacing(3)}`,
-  borderRadius: 50,
+  borderRadius: 10,
   backgroundColor: alpha(theme.palette.warning.main, 0.2),
   width: 'max-content',
   margin: 'auto',
