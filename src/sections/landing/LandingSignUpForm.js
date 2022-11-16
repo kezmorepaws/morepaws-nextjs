@@ -49,8 +49,8 @@ const LandingSignUpForm = (props) => {
     }
   };
   return (
-    <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-      <LandingSignUpFormContainer>
+    <LandingSignUpFormContainer>
+      <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
         <Box mb={3}>
           <Typography color={'white'} variant="body">
             <StarBorderIcon sx={{ marginBottom: -0.8 }} color="warning" /> Sign up below for your chance to{' '}
@@ -66,8 +66,8 @@ const LandingSignUpForm = (props) => {
             Enter the draw
           </Button>
         </Box>
-      </LandingSignUpFormContainer>
-    </FormProvider>
+      </FormProvider>
+    </LandingSignUpFormContainer>
   );
 };
 

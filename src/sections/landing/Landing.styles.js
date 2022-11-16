@@ -7,6 +7,9 @@ export const LandingContentContainer = styled(Box)(({ theme }) => ({
   //   margin: theme.spacing(4),
   minHeight: '100vh',
   borderRadius: 10,
+  [theme.breakpoints.down('md')]: {
+    padding: `${theme.spacing(3)}  ${theme.spacing(3)}`,
+  },
 }));
 
 export const HeroLogoContainer = styled(Box)(({ theme }) => ({
