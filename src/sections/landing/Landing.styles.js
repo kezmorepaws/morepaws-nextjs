@@ -34,6 +34,15 @@ export const HeroImageContainer = styled(Box)(({ theme }) => ({
   //   },
 }));
 
+export const LandingSignUpFormIconAndMessageContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  marginBottom: theme.spacing(3),
+  [theme.breakpoints.down('md')]: {
+    alignItems: 'flex-start',
+  },
+}));
+
 export const LandingSignUpFormContainer = styled(Box)(({ theme }) => ({
   boxShadow: theme.shadows[23],
   background: theme.palette.primary.main,
