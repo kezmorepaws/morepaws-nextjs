@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { LandingSignUpFormContainer } from './Landing.styles';
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Box, Button, CircularProgress, Stack, Typography } from '@mui/material';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 import * as Yup from 'yup';
@@ -10,7 +10,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { mixpanelTrack, MIXPANEL_EVENTS } from '../../mixpanel/mixpanel';
 
-const LandingSignUpForm = (props) => {
+const LandingSignUpForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const SignUpSchema = Yup.object().shape({
     email: Yup.string().email('Email must be a valid email address').required('Email is required'),
     full_name: Yup.string().required('Your name is required'),
@@ -37,6 +39,8 @@ const LandingSignUpForm = (props) => {
       mixpanelTrack(MIXPANEL_EVENTS.landing_signup_success, {
         email: data.email,
       });
+      setIsLoading(true);
+      setTimeout(() => setIsLoading(false), 1500);
     } catch (error) {
       console.error(error);
 
@@ -58,11 +62,18 @@ const LandingSignUpForm = (props) => {
           </Typography>
         </Box>
         <Stack mb={4} gap={2}>
-          <RHFTextField onDarkBg={true} variant={'filled'} name="full_name" label="Your full name" />
-          <RHFTextField onDarkBg={true} variant={'filled'} name="email" label="Email address" />
+          <RHFTextField
+            disabled={isLoading}
+            onDarkBg={true}
+            variant={'filled'}
+            name="full_name"
+            label="Your full name"
+          />
+          <RHFTextField disabled={isLoading} onDarkBg={true} variant={'filled'} name="email" label="Email address" />
         </Stack>
-        <Box display={'flex'} justifyContent={'flex-end'}>
-          <Button type="submit" color="_white" variant="outlined">
+        <Box display={'flex'} alignItems={'center'} justifyContent={'flex-end'}>
+          {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="warning" />}
+          <Button sx={{ fontWeight: 500 }} type="submit" color="_white" variant="outlined">
             Enter the draw
           </Button>
         </Box>
