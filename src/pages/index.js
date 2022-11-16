@@ -32,8 +32,8 @@ const index = (props) => (
                 <EmojiPeopleIcon sx={{ marginBottom: -0.4 }} color="warning" /> Who are we?
               </Typography>
               <Typography color={'primary'} variant="subtitle">
-                We are a new platform for dog lovers to find like minded people, like minded pets, explore new areas and
-                expand your dogs social circle by creating friendly, local communities.
+                MorePaws is an online platform dedicated to helping dog lovers find like minded people, with like minded
+                pets, explore new areas and expand your dogs social circle by creating friendly, local communities.
               </Typography>
             </Box>
             <ComingSoonBox>

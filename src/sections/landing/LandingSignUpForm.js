@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { LandingSignUpFormContainer } from './Landing.styles';
+import { LandingSignUpFormContainer, LandingSignUpFormIconAndMessageContainer } from './Landing.styles';
 import { Box, Button, CircularProgress, Stack, Typography } from '@mui/material';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
@@ -55,12 +55,14 @@ const LandingSignUpForm = () => {
   return (
     <LandingSignUpFormContainer>
       <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-        <Box mb={3}>
+        <LandingSignUpFormIconAndMessageContainer>
+          <Box mr={1}>
+            <StarBorderIcon sx={{ marginBottom: -0.8 }} color="warning" />
+          </Box>
           <Typography color={'white'} variant="body">
-            <StarBorderIcon sx={{ marginBottom: -0.8 }} color="warning" /> Sign up below for your chance to{' '}
-            <strong>win £100 worth of dog treats!</strong>
+            Sign up below for your chance to <strong>win £100 worth of dog treats!</strong>
           </Typography>
-        </Box>
+        </LandingSignUpFormIconAndMessageContainer>
         <Stack mb={4} gap={2}>
           <RHFTextField
             disabled={isLoading}
