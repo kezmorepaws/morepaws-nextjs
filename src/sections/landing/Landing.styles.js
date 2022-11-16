@@ -22,16 +22,16 @@ export const HeroLogoContainer = styled(Box)(({ theme }) => ({
 export const ComingSoonBox = styled(Box)(({ theme }) => ({
   padding: `${theme.spacing(2)}  ${theme.spacing(3)}`,
   borderRadius: 50,
-  backgroundColor: alpha(theme.palette.warning.main, 0.2),
+  backgroundColor: alpha(theme.palette.warning.main, 0.175),
   width: 'max-content',
   margin: 'auto',
 }));
 
 export const HeroImageContainer = styled(Box)(({ theme }) => ({
   width: '95vw',
-  //   [theme.breakpoints.down('md')]: {
-  //     width: 'vw',
-  //   },
+  [theme.breakpoints.down('md')]: {
+    width: '140vw',
+  },
 }));
 
 export const LandingSignUpFormIconAndMessageContainer = styled(Box)(({ theme }) => ({

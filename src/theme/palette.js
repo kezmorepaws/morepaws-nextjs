@@ -35,10 +35,10 @@ const PRIMARY = {
 };
 
 const SECONDARY = {
-  lighter: '#dbfff2',
-  light: '#6fffcd',
-  main: '#34d79e',
-  dark: '#148e63',
+  lighter: '#f1fffa',
+  light: '#57dba4',
+  main: '#34C588',
+  dark: '#0c7550',
   darker: '#09573c',
   contrastText: '#042c1e',
 };
@@ -106,7 +106,7 @@ const ERROR_RED = {
 };
 
 const COMMON = {
-  common: { black: '#000', white: '#fff', lightBrown: '#FEF6F2' },
+  common: { black: '#000', white: '#fff', lightBrown: '#fffdfb' },
   primary: PRIMARY,
   secondary: SECONDARY,
   info: INFO,
