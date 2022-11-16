@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Stack } from '@mui/system';
 
-import { HeroImageContainer, HeroLogoContainer, LandingContentContainer } from '../sections/landing/Landing.styles';
+import {
+  ComingSoonBox,
+  HeroImageContainer,
+  HeroLogoContainer,
+  LandingContentContainer,
+} from '../sections/landing/Landing.styles';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import MPLogo from '../assets/logo/MorePaws-logo-2.png';
@@ -26,22 +31,24 @@ const index = (props) => (
               <EmojiPeopleIcon sx={{ marginBottom: -0.4 }} color="warning" /> Who are we?
             </Typography>
             <Typography color={'primary'} variant="subtitle">
-              We are a new platform for dog lovers to find like minded people and pets, explore new areas and expand you
-              and your dogs social circles by creating friendly local communities.
+              We are a new platform for dog lovers to find like minded people, like minded pets, explore new areas and
+              expand you your dogs social circle by creating friendly, local communities.
             </Typography>
             <br />
             <br />
-            <Typography color={'primary'} variant="subtitle">
-              Website coming soon!
-            </Typography>
+            <ComingSoonBox>
+              <Typography color={'primary'} variant="subtitle">
+                Website coming soon!
+              </Typography>
+            </ComingSoonBox>
           </Box>
           <Box mb={2}>
             <Typography gutterBottom color={'primary'} variant="h4">
-              <EmojiEventsIcon sx={{ marginBottom: -0.4 }} color="warning" /> Prelaunch competition
+              <EmojiEventsIcon sx={{ marginBottom: -0.4 }} color="warning" /> Pre-launch competition
             </Typography>
             <Typography color={'primary'} variant="subtitle">
-              Grab your <strong>chance to win £100</strong> by signing up to our pre-launch newsletter below. The winner
-              will be chosen at random on the day of our launch!
+              Grab your <strong>chance to win £100 worth of dog treats,</strong> by signing up to our pre-launch
+              newsletter below. The winner will be chosen at random on the day of our launch!
             </Typography>
           </Box>
         </Box>

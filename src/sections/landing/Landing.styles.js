@@ -1,5 +1,5 @@
 import { ThemeContext } from '@emotion/react';
-import { Box, styled } from '@mui/material';
+import { alpha, Box, styled } from '@mui/material';
 
 export const LandingContentContainer = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.common.lightBrown,
@@ -14,6 +14,14 @@ export const HeroLogoContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     width: '80vw',
   },
+}));
+
+export const ComingSoonBox = styled(Box)(({ theme }) => ({
+  padding: `${theme.spacing(2)}  ${theme.spacing(3)}`,
+  borderRadius: 50,
+  backgroundColor: alpha(theme.palette.warning.main, 0.2),
+  width: 'max-content',
+  margin: 'auto',
 }));
 
 export const HeroImageContainer = styled(Box)(({ theme }) => ({
@@ -32,5 +40,6 @@ export const LandingSignUpFormContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     minWidth: 'unset',
     width: '100%',
+    padding: `${theme.spacing(3)}  ${theme.spacing(3)}`,
   },
 }));
