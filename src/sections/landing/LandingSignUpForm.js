@@ -73,7 +73,7 @@ const LandingSignUpForm = () => {
         </Stack>
         <Box display={'flex'} alignItems={'center'} justifyContent={'flex-end'}>
           {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="warning" />}
-          <Button sx={{ fontWeight: 500 }} type="submit" color="_white" variant="outlined">
+          <Button disabled={isLoading} sx={{ fontWeight: 500 }} type="submit" color="_white" variant="outlined">
             Enter the draw
           </Button>
         </Box>
