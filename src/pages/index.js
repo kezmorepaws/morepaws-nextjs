@@ -27,22 +27,22 @@ const index = (props) => (
         </HeroLogoContainer>
         <Box maxWidth={'500px'} textAlign={'center'} mb={4}>
           <Box mt={2} mb={6}>
-            <Typography gutterBottom color={'primary'} variant="h4">
-              <EmojiPeopleIcon sx={{ marginBottom: -0.4 }} color="warning" /> Who are we?
-            </Typography>
-            <Typography color={'primary'} variant="subtitle">
-              We are a new platform for dog lovers to find like minded people, like minded pets, explore new areas and
-              expand your dogs social circle by creating friendly, local communities.
-            </Typography>
-            <br />
-            <br />
+            <Box mb={6}>
+              <Typography gutterBottom color={'primary'} variant="h4">
+                <EmojiPeopleIcon sx={{ marginBottom: -0.4 }} color="warning" /> Who are we?
+              </Typography>
+              <Typography color={'primary'} variant="subtitle">
+                We are a new platform for dog lovers to find like minded people, like minded pets, explore new areas and
+                expand your dogs social circle by creating friendly, local communities.
+              </Typography>
+            </Box>
             <ComingSoonBox>
               <Typography color={'primary'} variant="subtitle">
                 Website coming soon!
               </Typography>
             </ComingSoonBox>
           </Box>
-          <Box mb={2}>
+          <Box mb={4}>
             <Typography gutterBottom color={'primary'} variant="h4">
               <EmojiEventsIcon sx={{ marginBottom: -0.4 }} color="warning" /> Pre-launch competition
             </Typography>
