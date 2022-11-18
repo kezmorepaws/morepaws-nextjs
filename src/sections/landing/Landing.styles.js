@@ -2,7 +2,7 @@ import { ThemeContext } from '@emotion/react';
 import { alpha, Box, styled } from '@mui/material';
 
 export const LandingContentContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.common.lightBrown,
+  backgroundColor: theme.palette.common.white,
   padding: `${theme.spacing(8)}  ${theme.spacing(6)}`,
   //   margin: theme.spacing(4),
   minHeight: '100vh',
@@ -34,9 +34,10 @@ export const HeroImageContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const LandingSignUpFormIconAndMessageContainer = styled(Box)(({ theme }) => ({
+export const LandingSignUpFormIconAndMessageContainer = styled(Box)(({ theme, showSuccess }) => ({
   display: 'flex',
   alignItems: 'center',
+  justifyContent: showSuccess ? 'center' : '',
   marginBottom: theme.spacing(3),
   [theme.breakpoints.down('md')]: {
     alignItems: 'flex-start',

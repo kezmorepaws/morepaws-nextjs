@@ -1,25 +1,37 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { LandingSignUpFormContainer, LandingSignUpFormIconAndMessageContainer } from './Landing.styles';
 import { Box, Button, CircularProgress, Stack, Typography } from '@mui/material';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import SentimentVerySatisfiedOutlinedIcon from '@mui/icons-material/SentimentVerySatisfiedOutlined';
 
 import * as Yup from 'yup';
 import FormProvider, { RHFTextField } from '../../components/hook-form';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { mixpanelTrack, MIXPANEL_EVENTS } from '../../mixpanel/mixpanel';
+import axiosInstance from '../../utils/axios';
+import Image from 'next/image';
+
+import DogGif from '../../assets/gifs/dog.webp';
 
 const LandingSignUpForm = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [result, setResult] = useState('');
+
+  const results = {
+    success: 'success',
+    already_exists: 'already_exists',
+    error: 'error',
+  };
 
   const SignUpSchema = Yup.object().shape({
     email: Yup.string().email('Email must be a valid email address').required('Email is required'),
-    full_name: Yup.string().required('Your name is required'),
+    first_name: Yup.string().required('Your name is required'),
   });
   const defaultValues = {
     email: '',
-    full_name: '',
+    first_name: '',
   };
 
   const methods = useForm({
@@ -40,45 +52,113 @@ const LandingSignUpForm = () => {
         email: data.email,
       });
       setIsLoading(true);
-      setTimeout(() => setIsLoading(false), 1500);
+      const res = await axiosInstance.post('marketing/pre-launch-sign-up', { ...data });
+      setResult(results.success);
+      setIsLoading(false);
     } catch (error) {
-      console.error(error);
-
+      if (error.message.split(' ').includes('already')) {
+        setResult(results.already_exists);
+      } else setResult(results.error);
+      setIsLoading(false);
       reset();
-
       setError('afterSubmit', {
         ...error,
         message: error.message,
       });
     }
   };
+
+  const showForm = useMemo(() => !result || result === results.error, [result, results.error]);
+
+  const showSuccess = useMemo(() => {
+    if ((result && result === results.success) || (result && result === results.already_exists)) {
+      return true;
+    } else return false;
+  }, [result, results.already_exists, results.success]);
+
+  const icon = showSuccess ? (
+    <SentimentVerySatisfiedOutlinedIcon fontSize="large" sx={{ marginBottom: -0.8 }} color="warning" />
+  ) : (
+    <StarBorderIcon fontSize="large" sx={{ marginBottom: -0.8 }} color="warning" />
+  );
+
+  const text = useCallback(() => {
+    if (!result) {
+      return (
+        <Typography color={'white'} variant="body">
+          Sign up below for your chance to <strong>win £100 worth of dog treats!</strong>
+        </Typography>
+      );
+    }
+    if (result === results.success) {
+      return (
+        <Typography color={'white'} variant="body">
+          Thanks! you've entered the draw! watch out for incoming updates!
+        </Typography>
+      );
+    }
+    if (result === results.already_exists) {
+      return (
+        <Typography color={'white'} variant="body">
+          Thanks! You've already signed up.
+        </Typography>
+      );
+    }
+    if (result === results.error) {
+      return (
+        <Typography color={'white'} variant="body">
+          Sorry an unexpected error occured, please try again.
+        </Typography>
+      );
+    }
+  }, [result, results.success, results.already_exists, results.error]);
+
   return (
     <LandingSignUpFormContainer>
       <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-        <LandingSignUpFormIconAndMessageContainer>
-          <Box mr={1}>
-            <StarBorderIcon fontSize="large" sx={{ marginBottom: -0.8 }} color="warning" />
-          </Box>
-          <Typography color={'white'} variant="body">
-            Sign up below for your chance to <strong>win £100 worth of dog treats!</strong>
-          </Typography>
+        <LandingSignUpFormIconAndMessageContainer showSuccess={showSuccess}>
+          <Box mr={1}>{icon}</Box>
+          {text()}
         </LandingSignUpFormIconAndMessageContainer>
-        <Stack mb={4} gap={2}>
-          <RHFTextField
-            disabled={isLoading}
-            onDarkBg={true}
-            variant={'filled'}
-            name="full_name"
-            label="Your full name"
-          />
-          <RHFTextField disabled={isLoading} onDarkBg={true} variant={'filled'} name="email" label="Email address" />
-        </Stack>
-        <Box display={'flex'} alignItems={'center'} justifyContent={'flex-end'}>
-          {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="warning" />}
-          <Button disabled={isLoading} sx={{ fontWeight: 400 }} type="submit" color="_white" variant="outlined">
-            {!isLoading ? 'Enter the draw' : 'Sending...'}
-          </Button>
-        </Box>
+        {showForm && (
+          <>
+            <Stack mb={4} gap={2}>
+              <RHFTextField
+                disabled={isLoading}
+                onDarkBg={true}
+                variant={'filled'}
+                name="first_name"
+                label="Your first name"
+              />
+              <RHFTextField
+                disabled={isLoading}
+                onDarkBg={true}
+                variant={'filled'}
+                name="email"
+                label="Email address"
+              />
+            </Stack>
+            <Box display={'flex'} alignItems={'center'} justifyContent={'flex-end'}>
+              {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="warning" />}
+              <Button disabled={isLoading} sx={{ fontWeight: 400 }} type="submit" color="_white" variant="outlined">
+                {!isLoading ? 'Enter the draw' : 'Sending...'}
+              </Button>
+            </Box>
+          </>
+        )}
+        {showSuccess && (
+          <Box
+            style={{
+              transform: 'scale(0.625)',
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: -70,
+              marginBottom: -70,
+            }}
+          >
+            <Image style={{ borderRadius: 8 }} src={DogGif} alt={'dog-gif'} />
+          </Box>
+        )}
       </FormProvider>
     </LandingSignUpFormContainer>
   );
