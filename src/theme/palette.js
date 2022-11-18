@@ -81,7 +81,7 @@ const SUCCESS = {
 const WARNING = {
   lighter: '#FFF5CC',
   light: '#FFD666',
-  main: '#FFAB00',
+  main: '#ffae00',
   dark: '#B76E00',
   darker: '#7A4100',
   contrastText: GREY[800],
@@ -106,7 +106,7 @@ const ERROR_RED = {
 };
 
 const COMMON = {
-  common: { black: '#000', white: '#fff', lightBrown: '#fffdfb' },
+  common: { black: '#000', white: '#fff', lightBrown: '#fffcfa' },
   primary: PRIMARY,
   secondary: SECONDARY,
   info: INFO,
