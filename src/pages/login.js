@@ -11,7 +11,7 @@ export default function LoginPage() {
   return (
     <>
       <Head>
-        <title> Login | My Local Deli - Vendor Dashboard</title>
+        <title> Login | MorePaws</title>
       </Head>
 
       <GuestGuard>

@@ -16,13 +16,14 @@ export default function RHFTextField({ name, variant, onDarkBg, addOutline, clas
   const sx = onDarkBg
     ? {
         '& label': {
-          color: 'white',
+          color: 'primary.main',
         },
         '& label.Mui-focused': {
-          color: 'warning',
+          color: 'primary.main',
         },
         '& .MuiFilledInput-root': {
-          color: 'white',
+          backgroundColor: 'common.white',
+          // color: 'white',
           ...(addOutline && { border: '0.2px solid white' }),
         },
         '& .MuiFilledInput-input': {

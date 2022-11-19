@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 // @mui
-import { Link, Stack, Alert, IconButton, InputAdornment } from '@mui/material';
+import { Link, Stack, Alert, IconButton, InputAdornment, useTheme } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // auth
 import { useAuthContext } from '../../auth/useAuthContext';
@@ -17,6 +17,7 @@ import { mixpanelTrack, MIXPANEL_EVENTS } from '../../mixpanel/mixpanel';
 
 export default function AuthLoginForm() {
   const { login } = useAuthContext();
+  const theme = useTheme();
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -65,12 +66,14 @@ export default function AuthLoginForm() {
       <Stack spacing={3}>
         {!!errors.afterSubmit && <Alert severity="error">{errors.afterSubmit.message}</Alert>}
 
-        <RHFTextField name="email" label="Email address" />
+        <RHFTextField name="email" label="Email address" variant="filled" onDarkBg />
 
         <RHFTextField
           name="password"
           label="Password"
+          variant="filled"
           type={showPassword ? 'text' : 'password'}
+          onDarkBg
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -83,8 +86,8 @@ export default function AuthLoginForm() {
         />
       </Stack>
 
-      <Stack alignItems="flex-end" sx={{ my: 2 }}>
-        <Link variant="body2" color="inherit" underline="always">
+      <Stack alignItems="center" sx={{ my: 2 }}>
+        <Link variant="body2" color="inherit" underline="always" sx={{ color: theme.palette.primary.contrastText }}>
           Forgot password?
         </Link>
       </Stack>
@@ -97,7 +100,7 @@ export default function AuthLoginForm() {
         variant="contained"
         loading={isSubmitSuccessful || isSubmitting}
         sx={{
-          bgcolor: 'text.primary',
+          bgcolor: 'secondary.main',
           color: (theme) => (theme.palette.mode === 'light' ? 'common.white' : 'grey.800'),
           '&:hover': {
             bgcolor: 'text.primary',

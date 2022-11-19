@@ -12,6 +12,7 @@ export const StyledRoot = styled('main')(() => ({
 }));
 
 export const StyledContent = styled('div')(({ theme }) => ({
+  // backgroundColor: theme.palette.primary.main,
   width: 650,
   display: 'flex',
   justifyContent: 'center',

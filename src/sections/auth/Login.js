@@ -21,37 +21,31 @@ export default function Login() {
 
   return (
     <LoginLayout>
-      <Stack spacing={2} sx={{ mb: 4, position: 'relative' }}>
-        <Typography variant="h3">Sign in to your Vendor Dashboard</Typography>
+      <Stack
+        sx={{
+          backgroundColor: theme.palette.primary.main,
+          padding: theme.spacing(6, 4),
+          borderRadius: theme.shape.borderRadius / 2,
+        }}
+      >
+        <Stack spacing={2} sx={{ mb: 4, position: 'relative', textAlign: 'center' }}>
+          <Typography variant="h3" sx={{ color: theme.palette.primary.contrastText }}>
+            Log in
+          </Typography>
 
-        <Stack direction="row" spacing={0.5}>
+          {/* <Stack direction="row" spacing={0.5}>
           <Typography variant="body1">New user?</Typography>
 
           <Link onClick={() => router.push(PATH_GUEST.register)} variant="subtitle1">
             Create an account
           </Link>
+        </Stack> */}
         </Stack>
 
-        {/* <Tooltip title={method} placement="left">
-          <Box
-            component="img"
-            alt={method}
-            src={`/assets/icons/auth/ic_${method}.png`}
-            sx={{ width: 32, height: 32, position: 'absolute', right: 0 }}
-          />
-        </Tooltip> */}
+        <AuthLoginForm />
 
-        <Alert severity="info" sx={{ mb: 3 }}>
-          Not a vendor?{' '}
-          <Link color={theme.palette.info.dark} sx={{ color: 'info' }} href="www.mylocaldeli.com">
-            <strong>Go to our customer website</strong>
-          </Link>
-        </Alert>
+        {/* <AuthWithSocial /> */}
       </Stack>
-
-      <AuthLoginForm />
-
-      {/* <AuthWithSocial /> */}
     </LoginLayout>
   );
 }
