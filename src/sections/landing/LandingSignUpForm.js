@@ -82,34 +82,27 @@ const LandingSignUpForm = () => {
     <StarBorderIcon fontSize="large" sx={{ marginBottom: -0.8 }} color="warning" />
   );
 
+  const textProps = {
+    color: 'white',
+    variant: 'subtitle1',
+  };
+
   const text = useCallback(() => {
     if (!result) {
       return (
-        <Typography color={'white'} variant="body">
+        <Typography {...textProps}>
           Sign up below for your chance to <strong>win £100 worth of dog treats!</strong>
         </Typography>
       );
     }
     if (result === results.success) {
-      return (
-        <Typography color={'white'} variant="body">
-          Thanks! you've entered the draw! watch out for incoming updates!
-        </Typography>
-      );
+      return <Typography {...textProps}>Thanks! you've entered the draw! watch out for incoming updates!</Typography>;
     }
     if (result === results.already_exists) {
-      return (
-        <Typography color={'white'} variant="body">
-          Thanks! You've already signed up.
-        </Typography>
-      );
+      return <Typography {...textProps}>Thanks! You've already signed up.</Typography>;
     }
     if (result === results.error) {
-      return (
-        <Typography color={'white'} variant="body">
-          Sorry an unexpected error occured, please try again.
-        </Typography>
-      );
+      return <Typography {...textProps}>Sorry an unexpected error occured, please try again.</Typography>;
     }
   }, [result, results.success, results.already_exists, results.error]);
 
@@ -139,7 +132,7 @@ const LandingSignUpForm = () => {
               />
             </Stack>
             <Box display={'flex'} alignItems={'center'} justifyContent={'flex-end'}>
-              {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="warning" />}
+              {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="secondary" />}
               <Button disabled={isLoading} sx={{ fontWeight: 400 }} type="submit" color="_white" variant="outlined">
                 {!isLoading ? 'Enter the draw' : 'Sending...'}
               </Button>

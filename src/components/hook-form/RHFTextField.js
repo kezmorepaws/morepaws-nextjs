@@ -16,18 +16,24 @@ export default function RHFTextField({ name, variant, onDarkBg, addOutline, clas
   const sx = onDarkBg
     ? {
         '& label': {
-          color: 'white',
+          // color: 'white',
+          color: 'secondary',
         },
         '& label.Mui-focused': {
-          color: 'warning',
+          color: 'secondary',
         },
         '& .MuiFilledInput-root': {
-          color: 'white',
+          // color: 'white',
+          '&:hover': {
+            // color: 'white',
+            backgroundColor: 'white',
+          },
+          backgroundColor: 'white',
           ...(addOutline && { border: '0.2px solid white' }),
         },
         '& .MuiFilledInput-input': {
           '&::placeholder': {
-            color: 'white',
+            // color: 'white',
           },
         },
       }
@@ -40,7 +46,7 @@ export default function RHFTextField({ name, variant, onDarkBg, addOutline, clas
       render={({ field, fieldState: { error } }) => (
         <TextField
           variant={variant || 'standard'}
-          color="warning"
+          // color="warning"
           {...field}
           sx={sx}
           fullWidth
