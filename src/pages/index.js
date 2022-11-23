@@ -22,9 +22,12 @@ const index = (props) => (
   <Stack overflow={'hidden'}>
     <LandingContentContainer>
       <Stack alignItems={'center'} justifyContent={'center'}>
-        <HeroLogoContainer>
+        {/* <HeroLogoContainer>
           <Image src={MPLogo} alt={'logo'} />
-        </HeroLogoContainer>
+        </HeroLogoContainer> */}
+        <HeroImageContainer>
+          <Image src={HeroImage} alt={'logo'} />
+        </HeroImageContainer>
         <Box maxWidth={'500px'} textAlign={'center'} mb={4}>
           <Box mt={2} mb={6}>
             <Box mb={6}>
@@ -56,9 +59,6 @@ const index = (props) => (
         <Box mb={8}>
           <LandingSignUpForm />
         </Box>
-        <HeroImageContainer>
-          <Image src={HeroImage} alt={'logo'} />
-        </HeroImageContainer>
       </Stack>
     </LandingContentContainer>
   </Stack>

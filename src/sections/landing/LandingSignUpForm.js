@@ -56,7 +56,7 @@ const LandingSignUpForm = () => {
       setResult(results.success);
       setIsLoading(false);
     } catch (error) {
-      if (error.message.split(' ').includes('already')) {
+      if (error?.message?.split(' ').includes('already')) {
         setResult(results.already_exists);
       } else setResult(results.error);
       setIsLoading(false);
@@ -156,7 +156,7 @@ const LandingSignUpForm = () => {
               marginBottom: -70,
             }}
           >
-            <Image style={{ borderRadius: 8 }} src={DogGif} alt={'dog-gif'} />
+            <Image unoptimized={true} style={{ borderRadius: 8 }} src={DogGif} alt={'dog-gif'} />
           </Box>
         )}
       </FormProvider>
