@@ -22,9 +22,9 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content={palette('light').primary.main} />
 
           {/* Favicon */}
-          <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/favicon/mp-favicon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon/mp-favicon.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon/mp-favicon.png" />
 
           {/* Fonts */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,9 +45,10 @@ export default class MyDocument extends Document {
           {this.props.emotionStyleTags}
 
           {/* Meta */}
-          <meta name="description" content="My Local Deli description" />
+
+          <meta name="description" content="MorePaws - A community for dogs and their owners" />
           <meta name="keywords" content="react,material,kit,application,dashboard,admin,template" />
-          <meta name="author" content="Kez Anwar" />
+          <meta name="author" content="MorePaws" />
         </Head>
 
         <body>
