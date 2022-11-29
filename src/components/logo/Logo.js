@@ -7,7 +7,7 @@ import { useTheme } from '@mui/material/styles';
 import { Box, Link, Typography } from '@mui/material';
 import Subheader from '../subheader/Subheader';
 import Image from 'next/image';
-import MPLogo from '../../assets/logo/MorePaws-logo-2.png';
+import MPLogo from '../../assets/images/MorePaws-logo.svg';
 import { LogoImageWrapper } from './Logo.styles';
 
 // ----------------------------------------------------------------------
