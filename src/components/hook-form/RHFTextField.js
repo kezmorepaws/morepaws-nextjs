@@ -28,6 +28,14 @@ export default function RHFTextField({ name, variant, onDarkBg, addOutline, clas
             // color: 'white',
             backgroundColor: 'white',
           },
+          '&:focus': {
+            // color: 'white',
+            backgroundColor: 'white',
+          },
+          '&:blur': {
+            // color: 'white',
+            backgroundColor: 'white',
+          },
           backgroundColor: 'white',
           ...(addOutline && { border: '0.2px solid white' }),
         },

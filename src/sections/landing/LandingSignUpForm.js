@@ -110,7 +110,6 @@ const LandingSignUpForm = () => {
     <LandingSignUpFormContainer>
       <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
         <LandingSignUpFormIconAndMessageContainer showSuccess={showSuccess}>
-          <Box mr={1}>{icon}</Box>
           {text()}
         </LandingSignUpFormIconAndMessageContainer>
         {showForm && (
@@ -133,7 +132,7 @@ const LandingSignUpForm = () => {
             </Stack>
             <Box display={'flex'} alignItems={'center'} justifyContent={'flex-end'}>
               {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="secondary" />}
-              <Button disabled={isLoading} sx={{ fontWeight: 400 }} type="submit" color="_white" variant="outlined">
+              <Button disabled={isLoading} sx={{ fontWeight: 400 }} type="submit" color="secondary" variant="contained">
                 {!isLoading ? 'Enter the draw' : 'Sending...'}
               </Button>
             </Box>
