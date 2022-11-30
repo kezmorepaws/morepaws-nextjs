@@ -81,7 +81,7 @@ const Index = (props) => {
                     textAlign: 'center',
                     width: isMobile ? 250 : 300,
                     margin: 'auto',
-                    marginTop: isMobile ? -2 : -5,
+                    marginTop: isMobile ? 1 : -5,
                   }}
                 >
                   <Typography color={'white'} variant="h4">

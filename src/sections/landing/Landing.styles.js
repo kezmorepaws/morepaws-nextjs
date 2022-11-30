@@ -28,8 +28,11 @@ export const MainContentWrapper = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   margin: 'auto',
-  marginTop: -350,
+  marginTop: -400,
   marginBottom: 50,
+  [theme.breakpoints.down(1400)]: {
+    marginTop: -300,
+  },
   [theme.breakpoints.down(1200)]: {
     padding: `0`,
     marginTop: -200,
