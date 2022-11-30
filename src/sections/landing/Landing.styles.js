@@ -75,11 +75,12 @@ export const HeroImageContainer = styled(Box)(({ theme }) => ({
 export const LandingSignUpFormIconAndMessageContainer = styled(Box)(({ theme, showSuccess }) => ({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: showSuccess ? 'center' : '',
+  justifyContent: 'center',
   marginBottom: theme.spacing(3),
-  [theme.breakpoints.down('md')]: {
-    alignItems: 'flex-start',
-  },
+  textAlign: 'center',
+  // [theme.breakpoints.down('md')]: {
+  //   alignItems: 'flex-start',
+  // },
 }));
 
 export const LandingSignUpFormContainer = styled(Box)(({ theme }) => ({

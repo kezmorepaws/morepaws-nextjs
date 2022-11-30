@@ -79,13 +79,13 @@ const Index = (props) => {
                 <Box
                   sx={{
                     textAlign: 'center',
-                    width: isMobile ? 250 : 300,
+                    width: isMobile ? 250 : 340,
                     margin: 'auto',
                     marginTop: isMobile ? 1 : -5,
                   }}
                 >
-                  <Typography color={'white'} variant="h4">
-                    Build a community with more friends, more walks and MorePaws
+                  <Typography sx={{ lineHeight: 1.2 }} color={'white'} variant={isMobile ? 'h4' : 'h3'}>
+                    Building a community with more friends, more walks and MorePaws
                   </Typography>
                 </Box>
               </Box>
@@ -132,7 +132,7 @@ const Index = (props) => {
                   </Box>
 
                   <Typography color={'grey_palette'} variant="subtitle">
-                    Register below for your <strong>chance to win £100 worth of dog treats</strong> and to keep up to
+                    Register below for your chance to win <strong>£100 worth of dog treats</strong> and to keep up to
                     date with our exciting launch.
                   </Typography>
                   <br />

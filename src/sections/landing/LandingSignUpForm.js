@@ -79,6 +79,7 @@ const LandingSignUpForm = () => {
   const textProps = {
     color: 'white',
     variant: 'subtitle1',
+    textAlign: 'center',
   };
 
   const text = useCallback(() => {
@@ -90,10 +91,10 @@ const LandingSignUpForm = () => {
       );
     }
     if (result === results.success) {
-      return <Typography {...textProps}>Thanks! you've entered the draw! watch out for incoming updates!</Typography>;
+      return <Typography {...textProps}>Thanks for entering, MorePaws the merrier</Typography>;
     }
     if (result === results.already_exists) {
-      return <Typography {...textProps}>Thanks! You've already signed up.</Typography>;
+      return <Typography {...textProps}>Thanks! You've already entered.</Typography>;
     }
     if (result === results.error) {
       return <Typography {...textProps}>Sorry an unexpected error occured, please try again.</Typography>;
@@ -106,33 +107,27 @@ const LandingSignUpForm = () => {
         <LandingSignUpFormIconAndMessageContainer showSuccess={showSuccess}>
           {text()}
         </LandingSignUpFormIconAndMessageContainer>
-        {showForm && (
-          <>
-            <Stack mb={4} gap={2}>
-              <RHFTextField
-                disabled={isLoading}
-                onDarkBg={true}
-                variant={'filled'}
-                name="first_name"
-                label="Your first name"
-              />
-              <RHFTextField
-                disabled={isLoading}
-                onDarkBg={true}
-                variant={'filled'}
-                name="email"
-                label="Email address"
-              />
-            </Stack>
-            <Box display={'flex'} alignItems={'center'} justifyContent={'flex-end'}>
-              {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="_white" />}
-              <Button disabled={isLoading} sx={{ fontWeight: 400 }} type="submit" color="secondary" variant="contained">
-                {!isLoading ? 'Enter the draw' : 'Sending...'}
-              </Button>
-            </Box>
-          </>
-        )}
-        {showSuccess && (
+        {/* {showForm && ( */}
+        <>
+          <Stack mb={4} gap={2}>
+            <RHFTextField
+              disabled={isLoading}
+              onDarkBg={true}
+              variant={'filled'}
+              name="first_name"
+              label="Your first name"
+            />
+            <RHFTextField disabled={isLoading} onDarkBg={true} variant={'filled'} name="email" label="Email address" />
+          </Stack>
+          <Box display={'flex'} alignItems={'center'} justifyContent={'center'}>
+            {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="_white" />}
+            <Button disabled={isLoading} sx={{ fontWeight: 400 }} type="submit" color="secondary" variant="contained">
+              {!isLoading ? 'Enter the draw' : 'Sending...'}
+            </Button>
+          </Box>
+        </>
+        {/* )} */}
+        {/* {showSuccess && (
           <Box
             style={{
               transform: 'scale(0.625)',
@@ -143,8 +138,8 @@ const LandingSignUpForm = () => {
             }}
           >
             <Image unoptimized={true} style={{ borderRadius: 8 }} src={DogGif} alt={'dog-gif'} />
-          </Box>
-        )}
+          </Box> */}
+        {/* )} */}
       </FormProvider>
     </LandingSignUpFormContainer>
   );
