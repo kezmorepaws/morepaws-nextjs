@@ -19,12 +19,18 @@ import LandingSignUpForm from '../sections/landing/LandingSignUpForm';
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import MPLogo from '../assets/images/MorePaws-logo.svg';
+import AccountIcon from '../assets/icons/Account-green.svg';
+import GiveawayIcon from '../assets/icons/Giveaway-green.svg';
 import useCustomMediaQueries from '../hooks/useCustomMediaQueries';
 // --------------- PRELAUNCH LANDING PAGE INDEX
 
 const Index = (props) => {
   const { isMobile, isTablet } = useCustomMediaQueries();
-
+  const iconStyles = {
+    height: 32,
+    width: 32,
+    marginRight: 8,
+  };
   return (
     <Stack sx={{ overflowX: 'hidden' }}>
       <LandingContentContainer>
@@ -34,7 +40,7 @@ const Index = (props) => {
         </HeroLogoContainer> */}
           <HeroImageContainer>
             <LogoWrapper>
-              <Image height={isTablet ? 800 : 300} src={MPLogo} alt={'logo'} />
+              <Image height={isTablet ? 850 : 300} src={MPLogo} alt={'logo'} />
             </LogoWrapper>
 
             <Box
@@ -55,10 +61,10 @@ const Index = (props) => {
               <Box
                 sx={{
                   position: 'absolute',
-                  top: '-100px',
+                  top: isTablet ? '-100px' : '-150px',
                   left: '50%',
                   transform: 'translateX(-50%)',
-                  width: isTablet ? '100vw' : '50vw',
+                  width: isTablet ? '90vw' : '50vw',
                 }}
               >
                 <Image
@@ -70,24 +76,47 @@ const Index = (props) => {
                   src={PhotoGroup}
                   alt={'logo'}
                 />
+                <Box
+                  sx={{
+                    textAlign: 'center',
+                    width: isMobile ? 250 : 300,
+                    margin: 'auto',
+                    marginTop: isMobile ? -2 : -5,
+                  }}
+                >
+                  <Typography color={'white'} variant="h4">
+                    Build a community with more friends, more walks and MorePaws
+                  </Typography>
+                </Box>
               </Box>
             </Box>
           </HeroImageContainer>
           <MainContentBackground>
             <MainContentWrapper>
-              <Box maxWidth={'500px'} textAlign={'center'} mb={4}>
+              <Box
+                display={'flex'}
+                flexDirection={'column'}
+                justifyContent={'center'}
+                alignItems={'center'}
+                maxWidth={'500px'}
+                textAlign={'center'}
+                mb={4}
+              >
                 <Box mt={2} mb={6}>
                   <Box mb={6}>
-                    <Typography gutterBottom color={'secondary'} variant="h4">
-                      <EmojiPeopleIcon fontSize="large" sx={{ marginBottom: -0.75 }} color="primary.light" /> Who are
-                      we?
-                    </Typography>
+                    <Box mb={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                      <img style={iconStyles} src={AccountIcon.src} alt="Landscape picture" />
+                      <Typography sx={{ marginBottom: -1 }} gutterBottom color={'secondary'} variant="h4">
+                        Who Are We?
+                      </Typography>
+                    </Box>
+
                     <Typography color={'grey_palette'} variant="subtitle">
-                      MorePaws is an online platform dedicated to helping dog lovers find like minded people, with like
-                      minded pets, explore new dog-friendly places and expand your dogs social circle by creating
-                      friendly, local communities.
+                      Morepaws is a platform which helps dog owners explore new places and meet new faces! Find other
+                      users who can suggest walks anywhere in the UK while expanding your doggy community.
                     </Typography>
                   </Box>
+
                   <ComingSoonBox>
                     <Typography color={'white'} variant="h6">
                       Website coming soon!
@@ -95,13 +124,21 @@ const Index = (props) => {
                   </ComingSoonBox>
                 </Box>
                 <Box mb={4}>
-                  <Typography gutterBottom color={'secondary'} variant="h4">
-                    <EmojiEventsIcon fontSize="large" sx={{ marginBottom: -0.75 }} color="secondary" /> Pre-launch
-                    competition
-                  </Typography>
+                  <Box mb={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                    <img style={iconStyles} src={GiveawayIcon.src} alt="Landscape picture" />
+                    <Typography sx={{ marginBottom: -1 }} gutterBottom color={'secondary'} variant="h4">
+                      Christmas Giveaway
+                    </Typography>
+                  </Box>
+
                   <Typography color={'grey_palette'} variant="subtitle">
-                    Grab your <strong>chance to win £100 worth of dog treats,</strong> by signing up to our pre-launch
-                    newsletter below. The winner will be chosen at random on the day of our launch!
+                    Register below for your <strong>chance to win £100 worth of dog treats</strong> and to keep up to
+                    date with our exciting launch.
+                  </Typography>
+                  <br />
+                  <br />
+                  <Typography color={'grey_palette'} variant="subtitle">
+                    Winner announced Christmas Day!
                   </Typography>
                 </Box>
               </Box>

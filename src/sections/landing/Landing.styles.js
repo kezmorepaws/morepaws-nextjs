@@ -27,17 +27,17 @@ export const MainContentWrapper = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  position: 'absolute',
-  left: '50%',
-  transform: 'translateX(-50%)',
-  top: '-400px',
+  margin: 'auto',
+  marginTop: -350,
+  marginBottom: 50,
   [theme.breakpoints.down(1200)]: {
     padding: `0`,
-    top: '-100px',
+    marginTop: -200,
   },
   [theme.breakpoints.down('md')]: {
     padding: `${theme.spacing(2)}  ${theme.spacing(6)}`,
     width: '85vw',
+    marginTop: -25,
   },
 }));
 
@@ -45,7 +45,6 @@ export const MainContentBackground = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.primary.light,
   width: '100vw',
   position: 'relative',
-  height: '100vh',
 }));
 
 export const HeroLogoContainer = styled(Box)(({ theme }) => ({

@@ -76,12 +76,6 @@ const LandingSignUpForm = () => {
     } else return false;
   }, [result, results.already_exists, results.success]);
 
-  const icon = showSuccess ? (
-    <SentimentVerySatisfiedOutlinedIcon fontSize="large" sx={{ marginBottom: -0.8 }} color="warning" />
-  ) : (
-    <StarBorderIcon fontSize="large" sx={{ marginBottom: -0.8 }} color="warning" />
-  );
-
   const textProps = {
     color: 'white',
     variant: 'subtitle1',
@@ -131,7 +125,7 @@ const LandingSignUpForm = () => {
               />
             </Stack>
             <Box display={'flex'} alignItems={'center'} justifyContent={'flex-end'}>
-              {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="secondary" />}
+              {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="_white" />}
               <Button disabled={isLoading} sx={{ fontWeight: 400 }} type="submit" color="secondary" variant="contained">
                 {!isLoading ? 'Enter the draw' : 'Sending...'}
               </Button>
