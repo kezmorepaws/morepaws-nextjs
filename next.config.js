@@ -1,6 +1,11 @@
 module.exports = {
   swcMinify: false,
   trailingSlash: true,
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
   env: {
     // HOST
     HOST_API_KEY: 'https://api-dev-minimal-v4.vercel.app',

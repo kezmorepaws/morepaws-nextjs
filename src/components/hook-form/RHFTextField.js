@@ -24,6 +24,7 @@ export default function RHFTextField({ name, variant, onDarkBg, addOutline, clas
         },
         '& .MuiFilledInput-root': {
           // color: 'white',
+
           '&:hover': {
             // color: 'white',
             backgroundColor: 'white',
@@ -36,7 +37,7 @@ export default function RHFTextField({ name, variant, onDarkBg, addOutline, clas
             // color: 'white',
             backgroundColor: 'white',
           },
-          backgroundColor: 'white',
+          backgroundColor: 'white!important',
           ...(addOutline && { border: '0.2px solid white' }),
         },
         '& .MuiFilledInput-input': {

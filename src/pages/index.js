@@ -12,7 +12,7 @@ import {
   MainContentWrapper,
 } from '../sections/landing/Landing.styles';
 import { Box, Typography } from '@mui/material';
-import Image from 'next/image';
+import Image from 'next/future/image';
 import GlobeBackground from '../assets/images/Globe-background.svg';
 import PhotoGroup from '../assets/images/Photo-group-pins.svg';
 import LandingSignUpForm from '../sections/landing/LandingSignUpForm';
@@ -34,7 +34,7 @@ const Index = (props) => {
         </HeroLogoContainer> */}
           <HeroImageContainer>
             <LogoWrapper>
-              <Image height={isTablet ? 800 : 300} src={MPLogo} alt={'logo'} />
+              <Image layout="raw" objectFit="cover" height={isTablet ? 800 : 300} src={MPLogo} alt={'logo'} />
             </LogoWrapper>
 
             <Box
@@ -51,25 +51,30 @@ const Index = (props) => {
               33vw"
                 src={GlobeBackground}
                 alt={'logo'}
+                layout="raw"
               />
               <Box
                 sx={{
                   position: 'absolute',
-                  top: '-100px',
+                  top: isTablet ? '-100px' : '-150px',
                   left: '50%',
                   transform: 'translateX(-50%)',
-                  width: isTablet ? '100vw' : '50vw',
                 }}
               >
-                <Image
-                  objectFit="cover"
-                  sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 100vw,
-              33vw"
-                  // height={300}
-                  src={PhotoGroup}
-                  alt={'logo'}
-                />
+                <Image objectFit="cover" layout="raw" src={PhotoGroup} alt={'logo'} />
+              </Box>
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: isTablet ? '100px' : '-150px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: isTablet ? '90vw' : '50vw',
+                }}
+              >
+                {/* <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                  <Typography>hello</Typography>
+                </Box> */}
               </Box>
             </Box>
           </HeroImageContainer>

@@ -12,6 +12,7 @@ export const LandingContentContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const LogoWrapper = styled(Box)(({ theme }) => ({
+  width: '100vw',
   marginBottom: theme.spacing(5),
   [theme.breakpoints.down(1300)]: {
     marginBottom: theme.spacing(10),
