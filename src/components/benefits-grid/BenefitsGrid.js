@@ -59,12 +59,18 @@ const BenefitsGrid = (props) => {
         {benefits?.map((b) => (
           <StyledBenefitsItemContainer key={b.title}>
             <img src={b.icon.src} style={iconStyles} alt={b.title} />
-            <Typography textAlign={'center'} color={'grey_palette.light'} variant="h5" gutterBottom>
+            <Typography
+              minHeight={isTablet ? 45 : ''}
+              textAlign={'center'}
+              color={'grey_palette.light'}
+              variant={isTablet ? 'h4' : 'h5'}
+              gutterBottom
+            >
               {b.title}
             </Typography>
             <Typography
               textAlign={'center'}
-              width={isTablet ? 140 : 200}
+              width={isTablet ? 110 : 200}
               color={'grey_palette.light'}
               variant="subtitle2"
               gutterBottom

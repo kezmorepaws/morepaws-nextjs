@@ -6,6 +6,7 @@ export const StyledBenefitsGridContainer = styled(Box)(({ theme }) => ({
   gap: theme.spacing(3),
   [theme.breakpoints.down('md')]: {
     gridTemplateColumns: '1fr 1fr',
+    padding: theme.spacing(1),
   },
 }));
 
