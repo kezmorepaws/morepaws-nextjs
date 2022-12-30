@@ -5,7 +5,7 @@ import { Typography, ListItemText, ListItemAvatar, MenuItem } from '@mui/materia
 // utils
 import { fToNow } from '../../../utils/formatTime';
 // _mock_
-import { _contacts } from '../../../_mock/arrays';
+import { _contacts } from '../../../assets/_mock/arrays';
 // components
 import { CustomAvatar } from '../../../components/custom-avatar';
 import Iconify from '../../../components/iconify';
