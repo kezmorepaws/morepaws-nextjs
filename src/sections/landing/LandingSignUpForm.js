@@ -99,7 +99,7 @@ const LandingSignUpForm = () => {
     if (result === results.error) {
       return <Typography {...textProps}>Sorry an unexpected error occured, please try again.</Typography>;
     }
-  }, [result, results.success, results.already_exists, results.error]);
+  }, [result, results.success, results.already_exists, results.error, textProps]);
 
   return (
     <LandingSignUpFormContainer>
@@ -121,7 +121,13 @@ const LandingSignUpForm = () => {
           </Stack>
           <Box display={'flex'} alignItems={'center'} justifyContent={'center'}>
             {isLoading && <CircularProgress sx={{ marginRight: 2 }} size={16} color="_white" />}
-            <Button disabled={isLoading} sx={{ fontWeight: 400 }} type="submit" color="secondary" variant="contained">
+            <Button
+              disabled={isLoading}
+              sx={{ fontWeight: 400, textTransform: 'unset' }}
+              type="submit"
+              color="secondary"
+              variant="contained"
+            >
               {!isLoading ? 'Enter the draw' : 'Sending...'}
             </Button>
           </Box>

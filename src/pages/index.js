@@ -22,6 +22,7 @@ import MPLogo from '../assets/images/MorePaws-logo.svg';
 import AccountIcon from '../assets/icons/Account-green.svg';
 import GiveawayIcon from '../assets/icons/Giveaway-green.svg';
 import useCustomMediaQueries from '../hooks/useCustomMediaQueries';
+import BenefitsGrid from '../components/benefits-grid/BenefitsGrid';
 // --------------- PRELAUNCH LANDING PAGE INDEX
 
 const Index = (props) => {
@@ -93,7 +94,7 @@ const Index = (props) => {
           </HeroImageContainer>
           <MainContentBackground>
             <MainContentWrapper>
-              <Box
+              {/* <Box
                 display={'flex'}
                 flexDirection={'column'}
                 justifyContent={'center'}
@@ -101,8 +102,8 @@ const Index = (props) => {
                 maxWidth={'500px'}
                 textAlign={'center'}
                 mb={4}
-              >
-                <Box mt={2} mb={6}>
+              > */}
+              {/* <Box mt={2} mb={6}>
                   <Box mb={6}>
                     <Box mb={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                       <img style={iconStyles} src={AccountIcon.src} alt="Landscape picture" />
@@ -142,9 +143,9 @@ const Index = (props) => {
                   </Typography>
                 </Box>
               </Box>
-              <Box mb={8}>
-                <LandingSignUpForm />
-              </Box>
+              <Box mb={8}>{/* <LandingSignUpForm />  */}
+              {/* </Box> */}
+              <BenefitsGrid />
             </MainContentWrapper>
           </MainContentBackground>
         </Stack>

@@ -44,7 +44,7 @@ const SECONDARY = {
 };
 const GREY_PALETTE = {
   lighter: GREY[300],
-  light: GREY[500],
+  light: GREY[600],
   main: GREY[800],
   dark: GREY[900],
   darker: GREY[800],

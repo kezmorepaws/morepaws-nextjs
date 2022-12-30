@@ -19,16 +19,16 @@ export const LogoWrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const MainContentWrapper = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.common.white,
+  // backgroundColor: theme.palette.common.white,
   width: 'max-content',
   borderRadius: 12,
-  padding: `${theme.spacing(6)}  ${theme.spacing(30)}`,
+  padding: `${theme.spacing(6)}  ${theme.spacing(10)}`,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
   margin: 'auto',
-  marginTop: -400,
+  marginTop: -450,
   marginBottom: 50,
   [theme.breakpoints.down(1400)]: {
     marginTop: -300,
