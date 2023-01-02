@@ -52,7 +52,14 @@ const BenefitsGrid = (props) => {
   const { isTablet } = useCustomMediaQueries();
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Typography backgroundColor={'primary.light'} textAlign={'center'} variant="h3" color={'white'} marginBottom={3}>
+      <Typography
+        lineHeight={1.1}
+        backgroundColor={'primary.light'}
+        textAlign={'center'}
+        variant="h3"
+        color={'white'}
+        marginBottom={3}
+      >
         A world of benefits for you and your dog
       </Typography>
       <StyledBenefitsGridContainer>
@@ -80,14 +87,14 @@ const BenefitsGrid = (props) => {
           </StyledBenefitsItemContainer>
         ))}
       </StyledBenefitsGridContainer>
-      <Button
+      {/* <Button
         sx={{ fontWeight: 400, textTransform: 'unset', margin: 'auto', marginTop: 6 }}
         type="submit"
         color="secondary"
         variant="contained"
       >
         {'Join the community'}
-      </Button>
+      </Button> */}
     </Box>
   );
 };
